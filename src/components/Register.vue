@@ -105,6 +105,7 @@
 </template>
 
 <script>
+	import axios from 'axios'
 	export default {
 		name: 'SignUp',
 		data() {
@@ -117,8 +118,19 @@
 			}
 		},
 		methods: {
-			signup() {
+			async signup() {
 				console.log('test', this.name, this.email, this.phone, this.password, this.confirmpassword);
+			
+				let result = await axios.post('http://localhost:3000/users', {
+					name: this.name,
+					email: this.email,
+					password: this.password,
+					confirmpassword: this.confirmpassword
+				})
+				if(result.status == 201) {
+					console.log('success');
+				}
+				localStorage.setItem("user-info", JSON.stringify(result.data))
 			}
 		}
 	}
