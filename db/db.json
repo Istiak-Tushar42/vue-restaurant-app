@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "name": "Istiak Hossain Tushar",
+      "email": "istiak.tushar.it@gmail.com",
+      "phone": "01615922742",
+      "password": "922742ab",
+      "id": 1
+    },
+    {
+      "name": "Abdullah Al Mamun",
+      "email": "ratulalmamun@gmail.com",
+      "phone": "01965088417",
+      "password": "988417",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+@import '../partials/partials';
+
+.authentication {
+    width: 100%;
+    height: calc(100vh - 4rem);
+    @include flex-center-column;
+    gap: length(32);
+
+    &-brand {
+        .logo {
+            @include flex-center;
+            text-decoration: none;
+            @include size-32-24-semibold;
+            margin-top: length(10);
+            color: $primary;
+            letter-spacing: length(0.75);
+            text-transform: uppercase;
+        }
+        
+    }
+
+    &-content {
+        @include flex-column;
+        gap: length(24);
+        padding: length(32);
+        @include radius(10);
+        background: $white;
+    }
+
+    &-header {
+        @include flex-center-column;
+        gap: length(12);
+
+        .authentication-title {
+            @include heading-1;
+            color: $textDark;
+            text-align: center;
+        }
+
+        .authentication-text {
+            @include size-24-16-mediam;
+            color: $textDark;
+            text-align: center;
+        }
+    }
+
+    &-body {
+        .authenticationform {
+            width: length(480);
+            @include flex-column;
+            gap: length(16);
+
+            .inputbox {
+                @include w100;
+                @include flex-column;
+                gap: length(8);
+
+                .infobox {
+                    @include flex-center-vert;
+                    @include border(solid, 1, $inputBorder);
+                    @include radius(4);
+                    overflow: hidden;
+                    @include transitions;
+
+                    &:focus-within {
+                        border-color: $focusBorder;
+                    }
+
+                    .inputfield {
+                        @include w100;
+                        @include size-24-16-normal;
+                        width: calc(100% - 3rem);
+                        padding: length(6) length(12);
+                        border: length(0);
+                        @include setBgColor(transparent, $textDark);
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        &:placeholder {
+                            color: $textPlaceholder;
+                        }
+                    }
+
+                    .icon {
+                        @include square(length(44));
+                        @include flex-center;
+                        overflow: hidden;
+                        @include border-single(right, solid, 0.25, $inputBorder);
+
+                        svg {
+                            @include square(length(20));
+                        }
+
+                        .showicon {
+                            display: block;
+                        }
+
+                        .hideicon {
+                            display: none;
+                        }
+
+                        &.active {
+                            .showicon {
+                                display: none;
+                            }
+    
+                            .hideicon {
+                                display: block;
+                            }
+                        }
+                    
+                        &.toggleicon {
+                            border-right: length(0);
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .required-text {
+                    @include size-24-14-bold;
+                    color: $focusBorder;
+                }
+
+                .forgot-text {
+                    @include size-24-14-bold;
+                    color: $focusBorder;
+    
+                    @include hover {
+                        color: $primary;
+                    }
+                }
+
+                .error-message {
+                    @include size-24-14-bold;
+                    color: $textDanger;
+                    display: none;
+                }
+
+                &.error {
+                    .infobox {
+                        border-color: $textDanger;
+                    }
+
+                    .error-message {
+                        display: block;
+                    }
+                }
+            }
+
+            .submitbox {
+                @include flex-center;
+
+                .btn-submit {
+                    @include flex-center;
+                    padding: length(12) length(36);
+                    border: none;
+                    cursor: pointer;
+                    @include size-24-16-semibold;
+                    @include setBgColor($buttonBackground, $white);
+                    @include transitions;
+
+                    @include breakpoint(phone768) {
+                        @include size-24-14-semibold;
+                    }
+
+                    @include hover {
+                        background: $backgroundHover;
+                    }
+                }
+            }
+        }
+    }
+
+    &-footer {
+        .authentication-text {
+            @include size-24-16-bold;
+            color: $focusBorder;
+            text-align: center;
+
+            @include breakpoint(phone768) {
+                @include size-24-14-bold;
+            }
+
+            .link {
+                @include size-24-16-bold;
+                color: $primary;
+
+                @include breakpoint(phone768) {
+                    @include size-24-14-bold;
+                }
+
+                @include hover {
+                    color: $buttonBackground;
+                }
+            }
+        }
+    }
+}

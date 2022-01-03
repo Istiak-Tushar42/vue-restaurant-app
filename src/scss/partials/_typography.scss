@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap');
+
+$nunito: 'Nunito', sans-serif;
+$oswald: 'Oswald', sans-serif;
+
+
+$font-sizes: ('s10': 10, 's11': 11, 's12': 12, 's13': 13, 's14': 14, 's15': 15, 'base': 16, 's17': 17, 's18': 18, 's20': 20, 's21': 21, 's22': 22, 's24': 24, 's25': 25, 's26': 26, 's28': 28, 's29': 29, 's30': 30, 's32': 32, 's35': 35, 's36': 36, 's42': 42, 's45': 45, 's64': 64);
+$font-styles: ('normal': normal, 'italic': italic, 'oblique': oblique);
+$font-weights: ('light': 300, 'normal': normal, 'medium': 500, 'semibold': 600, 'bold': 700);
+
+// SET FONT-FAMILY
+@function family($font-family) {
+	@return inspect($value: $font-family);
+}
+
+// SET FONT-STYLE
+@function style($font-style) {
+	@return map-get($font-styles, $font-style);
+}
+
+// SET FONT-STYLE
+@function size($font-size) {
+	@return map-get($font-sizes, $font-size);
+}
+
+// SET FONT-WEIGHT
+@function weight($font-weight) {
+	@return map-get($font-weights, $font-weight);
+}
+
+// SET LINE-HEIGHT
+@function line-height($line-height, $font-size) {
+	@return ($line-height / $font-size);
+}
+
+/*------------------------------------*\
+    // FONT STYLE MIXINS
+\*------------------------------------*/
+
+@mixin font($font-family, $font-style, $font-size, $font-weight, $line-height) {
+	font: {
+		family: $font-family;
+		style: $font-style;
+		size: $font-size / $base + rem;
+		weight: $font-weight;
+	}
+
+	line-height: $line-height;
+}
+
+/*------------------------------------*\
+		DISPLAY FONT SIZES
+\*------------------------------------*/
+@mixin display-1 {
+	@include font(family($oswald),
+		style('normal'),
+		size('s64'),
+		weight('semibold'),
+		line-height(77, size('s64'))
+    );
+}
+
+/*------------------------------------*\
+		HEADINGS FONT SIZES
+\*------------------------------------*/
+@mixin heading-1 {
+	@include font(family($oswald),
+		style('normal'),
+		size('s36'),
+		weight('semibold'),
+		line-height(48.96, size('s36'))
+    );
+}
+
+@mixin heading-2 {
+	@include font(family($oswald),
+		style('normal'),
+		size('s28'),
+		weight('semibold'),
+		line-height(38.08, size('s28'))
+    );
+}
+
+@mixin heading-3 {
+	@include font(family($oswald),
+		style('normal'),
+		size('s24'),
+		weight('semibold'),
+		line-height(32.64, size('s24'))
+    );
+}
+
+@mixin heading-4 {
+	@include font(family($oswald),
+		style('normal'),
+		size('s20'),
+		weight('semibold'),
+		line-height(27.2, size('s20'))
+    );
+}
+
+@mixin heading-5 {
+	@include font(family($oswald),
+		style('normal'),
+		size('s18'),
+		weight('semibold'),
+		line-height(24.48, size('s18'))
+    );
+}
+
+@mixin heading-6 {
+	@include font(family($oswald),
+		style('normal'),
+		size('base'),
+		weight('semibold'),
+		line-height(21.76, size('base'))
+    );
+}
+
+@mixin size-20-12-normal {
+	@include font(family($nunito),
+		style('normal'),
+		size('s12'),
+		weight('normal'),
+		line-height(20, size('s12'))
+    );
+}
+
+@mixin size-20-12-medium {
+	@include font(family($nunito),
+		style('normal'),
+		size('s12'),
+		weight('medium'),
+		line-height(20, size('s12'))
+    );
+}
+
+@mixin size-20-12-semibold {
+	@include font(family($nunito),
+		style('normal'),
+		size('s12'),
+		weight('semibold'),
+		line-height(20, size('s12'))
+    );
+}
+
+@mixin size-20-12-bold {
+	@include font(family($nunito),
+		style('normal'),
+		size('s12'),
+		weight('bold'),
+		line-height(20, size('s12'))
+    );
+}
+
+@mixin size-24-14-normal {
+	@include font(family($nunito),
+		style('normal'),
+		size('s14'),
+		weight('normal'),
+		line-height(24, size('s14'))
+    );
+}
+
+@mixin size-24-14-medium {
+	@include font(family($nunito),
+		style('normal'),
+		size('s14'),
+		weight('medium'),
+		line-height(24, size('s14'))
+    );
+}
+
+@mixin size-24-14-semibold {
+	@include font(family($nunito),
+		style('normal'),
+		size('s14'),
+		weight('semibold'),
+		line-height(24, size('s14'))
+    );
+}
+
+@mixin size-24-14-bold {
+	@include font(family($nunito),
+		style('normal'),
+		size('s14'),
+		weight('bold'),
+		line-height(24, size('s14'))
+    );
+}
+
+@mixin size-24-16-normal {
+	@include font(family($nunito),
+		style('normal'),
+		size('base'),
+		weight('normal'),
+		line-height(24, size('base'))
+    );
+}
+
+@mixin size-24-16-mediam {
+	@include font(family($nunito),
+		style('normal'),
+		size('base'),
+		weight('mediam'),
+		line-height(24, size('base'))
+    );
+}
+
+@mixin size-24-16-semibold {
+	@include font(family($nunito),
+		style('normal'),
+		size('base'),
+		weight('semibold'),
+		line-height(24, size('base'))
+    );
+}
+
+@mixin size-24-16-bold {
+	@include font(family($nunito),
+		style('normal'),
+		size('base'),
+		weight('bold'),
+		line-height(24, size('base'))
+    );
+}
+
+@mixin size-26-18-normal {
+	@include font(family($nunito),
+		style('normal'),
+		size('s18'),
+		weight('normal'),
+		line-height(26, size('s18'))
+    );
+}
+
+@mixin size-26-18-medium {
+	@include font(family($nunito),
+		style('normal'),
+		size('s18'),
+		weight('medium'),
+		line-height(26, size('s18'))
+    );
+}
+
+@mixin size-26-18-semibold {
+	@include font(family($nunito),
+		style('normal'),
+		size('s18'),
+		weight('semibold'),
+		line-height(26, size('s18'))
+    );
+}
+
+@mixin size-26-18-bold {
+	@include font(family($nunito),
+		style('normal'),
+		size('s18'),
+		weight('bold'),
+		line-height(26, size('s18'))
+    );
+}
+
+@mixin size-28-20-normal {
+	@include font(family($nunito),
+		style('normal'),
+		size('s20'),
+		weight('normal'),
+		line-height(28, size('s20'))
+    );
+}
+
+@mixin size-28-20-medium {
+	@include font(family($nunito),
+		style('normal'),
+		size('s20'),
+		weight('medium'),
+		line-height(28, size('s20'))
+    );
+}
+
+@mixin size-28-20-semibold {
+	@include font(family($nunito),
+		style('normal'),
+		size('s20'),
+		weight('semibold'),
+		line-height(28, size('s20'))
+    );
+}
+
+@mixin size-28-20-bold {
+	@include font(family($nunito),
+		style('normal'),
+		size('s20'),
+		weight('bold'),
+		line-height(28, size('s20'))
+    );
+}
+
+@mixin size-32-24-normal {
+	@include font(family($nunito),
+		style('normal'),
+		size('s24'),
+		weight('normal'),
+		line-height(32, size('s24'))
+    );
+}
+
+@mixin size-32-24-medium {
+	@include font(family($nunito),
+		style('normal'),
+		size('s24'),
+		weight('medium'),
+		line-height(32, size('s24'))
+    );
+}
+
+@mixin size-32-24-semibold {
+	@include font(family($nunito),
+		style('normal'),
+		size('s24'),
+		weight('semibold'),
+		line-height(32, size('s24'))
+    );
+}
+
+@mixin size-32-24-bold {
+	@include font(family($nunito),
+		style('normal'),
+		size('s24'),
+		weight('bold'),
+		line-height(32, size('s24'))
+    );
+}

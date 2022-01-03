@@ -1,0 +1,371 @@
+/*------------------------------------*\
+    breakpoint vars
+\*------------------------------------*/
+$breakpoints: (
+    break-320: 320,
+    break-321: 321,
+    break-359: 359,
+    break-375: 375,
+    break-400: 400,
+    break-414: 414,
+    break-480: 480,
+    break-500: 500,
+    break-575: 575,
+    break-600: 600,
+    break-700: 700,
+    break-768: 768,
+    break-800: 800,
+    break-991: 991,
+    break-1024: 1024,
+    break-1100: 1100,
+    break-1169: 1169,
+    break-1199: 1199,
+    break-1200: 1200,
+    break-1224: 1224,
+    break-1280: 1280,
+    break-1366: 1366,
+    break-1400: 1400
+);
+
+/*------------------------------------*\
+    breakpoint functions
+\*------------------------------------*/
+@function breakpoint($breakpoint) {
+    @return map-get($breakpoints, $breakpoint);
+}
+
+@function break($point) {
+    @return breakpoint($point) / $base+rem;
+}
+
+/*------------------------------------*\
+    breakpoint mixin
+\*------------------------------------*/
+@mixin breakpoint($breakpoints) {
+
+    // MAX WIDTH
+    @if $breakpoints==desktop1400 {
+        @media screen and (max-width: break(break-1400)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==desktop1366 {
+        @media screen and (max-width: break(break-1366)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==desktop1224 {
+        @media screen and (max-width: break(break-1224)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==desktop1200 {
+        @media screen and (max-width: break(break-1200)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==desktop1199 {
+        @media screen and (max-width: break(break-1199)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==desktop1169 {
+        @media screen and (max-width: break(break-1169)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==desktop1024 {
+        @media screen and (max-width: break(break-1024)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==tablet991 {
+        @media screen and (max-width: break(break-991)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==phone768 {
+        @media screen and (max-width: break(break-768)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==phone575 {
+        @media screen and (max-width: break(break-575)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==phone500 {
+        @media screen and (max-width: break(break-500)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==phone480 {
+        @media screen and (max-width: break(break-480)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==phone414 {
+        @media screen and (max-width: break(break-414)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==mobile400 {
+        @media screen and (max-width: break(break-400)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==phone375 {
+        @media screen and (max-width: break(break-375)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==phone359 {
+        @media screen and (max-width: break(break-359)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==mobilePortrait {
+        @media screen and (max-width: break(break-320)) {
+            @content;
+        }
+    }
+
+    // Smartphones (landscape)
+    @else if $breakpoints==mobileLandscape {
+        @media screen and (min-width: break(break-321)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==mobile360 {
+        @media screen and (min-width: break(break-360)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==mobile375 {
+        @media screen and (min-width: break(break-375)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==mobile414 {
+        @media screen and (min-width: break(break-414)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==mobile480 {
+        @media screen and (min-width: break(break-480)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==mobile500 {
+        @media screen and (min-width: break(break-500)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==mobile575 {
+        @media screen and (min-width: break(break-575)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==mobile600 {
+        @media screen and (min-width: break(break-600)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==mobile768 {
+        @media screen and (min-width: break(break-768)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==tab991 {
+        @media screen and (min-width: break(break-991)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==laptop1024 {
+        @media screen and (min-width: break(break-1024)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==laptop1169 {
+        @media screen and (min-width: break(break-1169)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==laptop1100 {
+        @media screen and (max-width: break(break-1100)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==laptop1199 {
+        @media screen and (min-width: break(break-1199)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoints==laptop1200 {
+        @media screen and (min-width: break(break-1200)) {
+            @content;
+        }
+    }
+
+    // Smartphones (portrait and landscape)
+    @else if $breakpoints==mobile {
+        @media only screen and (min-width: break(break-320)) and (max-width: break(break-480)) {
+            @content;
+        }
+    }
+
+    // Smartphones (portrait and landscape)
+    @else if $breakpoints==smart {
+        @media only screen and (min-width: break(break-500)) and (max-width: break(break-767)) {
+            @content;
+        }
+    }
+
+    // Tablets
+    @else if $breakpoints==tablet {
+        @media only screen and (min-width: break(break-768)) and (max-width: break(break-991)) {
+            @content;
+        }
+    }
+
+    // iPads (portrait and landscape)
+    @else if $breakpoints==ipad {
+        @media only screen and (min-width: break(break-768)) and (max-width: break(break-1024)) {
+            @content;
+        }
+    }
+
+    // Laptop-Desktop
+    @else if $breakpoints==laptopmini {
+        @media only screen and (min-width: break(break-1024)) and (max-width: break(break-1169)) {
+            @content;
+        }
+    }
+
+    // Laptop-Desktop
+    @else if $breakpoints==laptop {
+        @media only screen and (min-width: break(break-1169)) and (max-width: break(break-1366)) {
+            @content;
+        }
+    }
+
+    // iPads (portrait)
+    @else if $breakpoints==ipadPortrait {
+        @media only screen and (min-width: break(break-768)) and (max-width : break(break-1024)) and (orientation: portrait) {
+            @content;
+        }
+    }
+
+    // iPads (landscape)
+    @else if $breakpoints==ipadLandscape {
+        @media only screen and (min-width: break(break-768)) and (max-width: break(break-1024)) and (orientation: landscape) {
+            @content;
+        }
+    }
+
+    // iPhone 4
+    @else if $breakpoints==iphone4 {
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+            @content;
+        }
+    }
+
+    // If the key doesn't exist in the map
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        +"Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+/*------------------------------------*\
+    breakpoint usage
+\*------------------------------------*/
+// header {
+//     height: 100px;
+//     @include breakpoint(iphone4) { height: auto; }
+// }
+
+// MAX-WIDTH
+// @include breakpoint(desktop1400) {}
+// @include breakpoint(desktop1366) {}
+// @include breakpoint(desktop1224) {}
+// @include breakpoint(desktop1200) {}
+// @include breakpoint(desktop1199) {}
+// @include breakpoint(desktop1169) {}
+// @include breakpoint(laptop1100) {}
+// @include breakpoint(desktop1024) {}
+// @include breakpoint(tablet991) {}
+// @include breakpoint(phone768) {}
+// @include breakpoint(phone575) {}
+// @include breakpoint(phone500) {}
+// @include breakpoint(phone480) {}
+// @include breakpoint(phone414) {}
+// @include breakpoint(mobile400) {}
+// @include breakpoint(phone375) {}
+// @include breakpoint(phone359) {}
+
+// MIN-WIDTH
+// @include breakpoint(mobileLandscape) {}
+// @include breakpoint(mobile360) {}
+// @include breakpoint(mobile375) {}
+// @include breakpoint(mobile414) {}
+// @include breakpoint(mobile480) {}
+// @include breakpoint(mobile500) {}
+// @include breakpoint(mobile575) {}
+// @include breakpoint(mobile600) {}
+// @include breakpoint(mobile768) {}
+// @include breakpoint(tab991) {}
+// @include breakpoint(laptop1024) {}
+// @include breakpoint(laptop1169) {}
+// @include breakpoint(laptop1199) {}
+// @include breakpoint(laptop1200) {}
+
+// MIN-MAX WIDTH
+// 320-480
+// @include breakpoint(mobile) {}
+// 500-767
+// @include breakpoint(smart) {}
+// 768-991
+// @include breakpoint(tablet) {}
+// 768-1024
+// @include breakpoint(ipad) {}
+// 768-1024
+// @include breakpoint(ipadPortrait) {}
+// 768-1024
+// @include breakpoint(ipadLandscape) {}
+// 1024-1169
+// @include breakpoint(laptopmini) {}
+// 1169-1366
+// @include breakpoint(laptop) {}

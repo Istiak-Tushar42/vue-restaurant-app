@@ -1,0 +1,5 @@
+.header {
+    background: $primary;
+    @include flex-center-between;
+    height: length(64);
+}

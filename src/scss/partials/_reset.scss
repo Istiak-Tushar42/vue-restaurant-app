@@ -1,0 +1,25 @@
+* {
+    margin: length(0);
+    padding: length(0);
+}
+
+*::before,
+*::after {
+    margin: length(0);
+    padding: length(0);
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: length(0);
+    overflow-x: hidden;
+    background: $bodyBackground;
+}
+
+a {
+    text-decoration: none;
+    @include transitions;
+}
